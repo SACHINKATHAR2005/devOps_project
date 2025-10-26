@@ -1,22 +1,23 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const taskSchema = new mongoose.Schema(
-  {
-    title: {
-      type: String,
-      required: true,
+    {
+        title: {
+            type: String,
+            required: true,
+        },
+        discription: {
+            // title,discription
+            type: String,
+        },
+        completed: {
+            type: Boolean,
+            default: false,
+        },
     },
-    discription:{ // title,discription
-type:String
+    {
+        timestamps: true, // adds createdAt & updatedAt
     },
-    completed: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  {
-    timestamps: true, // adds createdAt & updatedAt
-  }
 );
 
-export default mongoose.model("Task", taskSchema);
+export default mongoose.model('Task', taskSchema);
